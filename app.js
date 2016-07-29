@@ -13,13 +13,6 @@ $(function() {
 
                 index = data.id;
 
-                if (data.votes === undefined) {
-                    $("#votes").html(0);
-                } else {
-                    $("#votes").html(data.votes);
-                }
-
-                changeVoteColor(data.votes);
 
             },"json")
         }
@@ -36,7 +29,7 @@ $(function() {
             success: function(data, status, xhr) {
                 $("#votes").html(data.votes);
 
-                changeVoteColor(data.votes);
+                
             }
         });
     });
@@ -52,18 +45,9 @@ $(function() {
             success: function(data, status, xhr) {
                 $("#votes").html(data.votes);
 
-                changeVoteColor(data.votes);
+               
             }
         });
     });
 
-    function changeVoteColor(numVotes) {
-        if (numVotes < 0) {
-            $("#votes").css('color', 'red');
-        } else if (numVotes > 0) {
-            $("#votes").css('color', 'lightgreen');
-        } else {
-            $("#votes").css('color', 'white');
-        }
-    };
-});
+  
